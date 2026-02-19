@@ -46,6 +46,10 @@ import dashboardRouter from "./routes/dashboard.routes.js"
 import searchHistoryRouter from "./routes/searchHistory.routes.js"
 
 //routes declaration
+app.get("/", (req, res) => {
+  res.json({ message: "Backend API is running", status: "ok" });
+});
+
 app.use("/api/v1/healthcheck", healthcheckRouter)
 app.use("/api/v1/users", userRouter)
 app.use("/api/v1/videos", videoRouter)
