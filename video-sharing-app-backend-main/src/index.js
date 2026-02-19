@@ -4,12 +4,7 @@ import { app } from './app.js';
 
 dotenv.config();
 
-connectDB()
-  .then(() => {
-    app.listen(process.env.PORT || 3000, () => {
-      console.log("💻 Server is running at port:", process.env.PORT);
-    });
-  })
-  .catch((err) => {
-    console.log("❌ Mongo db connection failed !!!", err)
-  })
+// Connect to DB before handling requests
+await connectDB();
+
+export default app;
