@@ -13,7 +13,7 @@ import { optionalAuth } from "../middlewares/optionalAuth.middleware.js";
 
 const router = Router();
 
-
+//hii
 router.route("/:videoId")
     .get(optionalAuth, getVideoComments)
     .post(verifyJWT, addComment);
